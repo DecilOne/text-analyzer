@@ -15,7 +15,7 @@ def sort_words(counts):
     sorted_words = sorted(counts.items(), key=lambda x: x[1], reverse=True)
     return sorted_words
 
-user_input = input("اكتب نصاً: ")
+user_input = input("اكتب نصاً: ").strip()
 result = split_text(user_input)
 counts = count_words(result)
 sorted_result = sort_words(counts)
