@@ -20,8 +20,9 @@ def display_results(sorted_words):
     for word, count in sorted_words:
         print(f"{word}: {count}")
 
-user_input = input("اكتب نصاً: ").strip().lower()
-result = split_text(user_input)
-counts = count_words(result)
-sorted_result = sort_words(counts)
-display_results(sorted_result)
+if __name__ == "__main__":
+    user_input = input("اكتب نصاً: ").strip().lower()
+    result = split_text(user_input)
+    counts = count_words(result)
+    sorted_result = sort_words(counts)
+    display_results(sorted_result)
