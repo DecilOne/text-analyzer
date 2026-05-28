@@ -5,6 +5,8 @@ def split_text(text):
 def count_words(words):
     counts = {}
     for word in words:
+        if len(word) <= 3:
+            continue
         if word in counts:
             counts[word] += 1
         else:
@@ -15,14 +17,8 @@ def sort_words(counts):
     sorted_words = sorted(counts.items(), key=lambda x: x[1], reverse=True)
     return sorted_words
 
-def display_results(sorted_words):
-    print("\n--- نتائج التحليل ---")
-    for word, count in sorted_words:
-        print(f"{word}: {count}")
-
-if __name__ == "__main__":
-    user_input = input("اكتب نصاً: ").strip().lower()
-    result = split_text(user_input)
-    counts = count_words(result)
-    sorted_result = sort_words(counts)
-    display_results(sorted_result)
+user_input = input("اكتب نصاً: ").strip().lower()
+result = split_text(user_input)
+counts = count_words(result)
+sorted_result = sort_words(counts)
+print(sorted_result)
