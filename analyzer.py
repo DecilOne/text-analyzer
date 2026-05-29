@@ -1,6 +1,12 @@
+import string
+
 def split_text(text):
     words = text.split()
-    return words
+    cleaned = []
+    for word in words:
+        word = word.strip(string.punctuation)
+        cleaned.append(word)
+    return cleaned
 
 def count_words(words):
     counts = {}
